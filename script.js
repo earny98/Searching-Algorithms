@@ -1,5 +1,6 @@
 const container = document.querySelector(".data-container");
 
+//Array Generator 
 function generatebars(num = 20) {
 
     for(let i = 0; i < num; i++){
@@ -29,7 +30,7 @@ function generate()
 window.location.reload();
 }
 
-//bubblesort
+//Bubble Sort
 function swap(el1, el2) {
 	return new Promise((resolve) => {
 
@@ -82,7 +83,7 @@ document.getElementById("button1").style.backgroundColor = "#6f459e";
 document.getElementById("button2").disabled = false;
 }
 
-//Inserctionsort
+//Inserction Sort
 async function InsertionSort(delay = 600) {
     let bars = document.querySelectorAll(".bar");
     
@@ -192,6 +193,82 @@ document.getElementById("button1").style.backgroundColor = "#6f459e";
 document.getElementById("button4").disabled = false;
 }
 
+// QuickSort
+async function sort(l, r, delay = 900) {
+    var bars = document.querySelectorAll(".bar");
+    var pivot = Number(bars[r].childNodes[0].innerHTML);
+    for (var i = 0; i < 20; i++) {
+    }
+var i = l - 1;
+bars[r].style.backgroundColor = "red";
+
+for (var j = l; j <= r - 1; j++) {
+
+	bars[j].style.backgroundColor = "yellow";
+
+	await new Promise((resolve) =>
+	setTimeout(() => {
+		resolve();
+	}, delay)
+	);
+
+	var value = Number(bars[j].childNodes[0].innerHTML);
+
+	if (value < pivot) {
+	i++;
+
+	var temp1 = bars[i].style.height;
+	var temp2 = bars[i].childNodes[0].innerText;
+	bars[i].style.height = bars[j].style.height;
+	bars[j].style.height = temp1;
+	bars[i].childNodes[0].innerText =
+	bars[j].childNodes[0].innerText;
+	bars[j].childNodes[0].innerText = temp2;
+	bars[i].style.backgroundColor = "orange";
+
+	if (i != j)
+    bars[j].style.backgroundColor = "pink";
+
+	await new Promise((resolve) =>
+		setTimeout(() => {
+		resolve();
+		}, delay)
+	);
+	} else bars[j].style.backgroundColor = "pink";
+}
+
+i++;
+var temp1 = bars[i].style.height;
+var temp2 = bars[i].childNodes[0].innerText;
+bars[i].style.height = bars[r].style.height;
+bars[r].style.height = temp1;
+bars[i].childNodes[0].innerText =
+bars[r].childNodes[0].innerText;
+bars[r].childNodes[0].innerText = temp2;
+bars[r].style.backgroundColor = "pink";
+bars[i].style.backgroundColor = "green";
+
+await new Promise((resolve) =>
+	setTimeout(() => {
+	resolve();
+	}, delay * 3)
+);
+
+for (var k = 0; k < 20; k++)
+bars[k].style.backgroundColor = "#6b5b95";
+return i;
+}
+
+async function QuickSort(l, r) {
+if (l < r) {	
+	var pivot_idx = await sort(l, r);
+	await QuickSort(l, pivot_idx - 1);
+	await QuickSort(pivot_idx + 1, r);
+}
+document.getElementById("button1").disabled = false;
+document.getElementById("button1").style.backgroundColor = "#6f459e";
+}
+
 // To disable the button
 function disable()
 {
@@ -219,5 +296,6 @@ document.getElementById("button6").disabled = true;
 document.getElementById("button6").style.backgroundColor = "#888888";
 document.getElementById("button6").style.color = "white";
 }
+
 
 

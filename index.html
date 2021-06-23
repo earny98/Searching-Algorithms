@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div>
+    
+        <div class="header">
             <button class="btn1" onclick="generate()" id="button1"> Generate New Array</button>
             <button class="btn2" onclick="bubbleSort(),disable()" id="button2">Bubble Sort</button>
             <button class="btn3" onclick="InsertionSort(),disable()" id="button3">Insertion Sort</button>
             <button class="btn4" onclick="SectionSort(),disable()" id="button4">Section Sort</button>
-            <button class="btn5" onclick="QuickSort(),disable()" id="button5">Quick Sort</button>
+            <button class="btn5" onclick="QuickSort(0,19),disable()" id="button5">Quick Sort</button>
             <button class="btn6" onclick="BucketSort(),disable()" id="button6">Bucket Sort</button>
         </div>
-        <br><br>
-    <section class="data-container"></section>
-
+    <div class="data-container"> </div>
     <script src="script.js"></script>
 </body>
 </html>
