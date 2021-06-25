@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-.header {
+div {
 	text-align: center;
     background-color: #333333;
 }
@@ -23,7 +23,7 @@ button {
 	position: relative;
 	margin: 0 auto;
 }
-.bar {
+.bar{
 	width: 28px;
 	position: absolute;
 	left: 0;
@@ -32,7 +32,7 @@ button {
 	transition: 0.2s all ease;
 }
 	
-.bar_id {
+.bar__id {
 	position: absolute;
 	top: -24px;
 	width: 100%;

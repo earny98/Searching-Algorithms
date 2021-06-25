@@ -291,10 +291,6 @@ document.getElementById("button4").style.color = "white";
 document.getElementById("button5").disabled = true;
 document.getElementById("button5").style.backgroundColor = "#888888";
 document.getElementById("button5").style.color = "white";
-
-document.getElementById("button6").disabled = true;
-document.getElementById("button6").style.backgroundColor = "#888888";
-document.getElementById("button6").style.color = "white";
 }
 
 
